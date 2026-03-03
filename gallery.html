@@ -1,10 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Garlic Mart — Gallery</title>
+    <link rel="stylesheet" href="asset/css/styles.css"/>
 </head>
 <body>
-$END$
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="topbar">
+    <div class="container row">
+        <a class="brand" href="index.html">
+            <img src="Images/logo.jpg" alt="Garlic Mart Logo" class="logo">
+            <span>Garlic Mart</span>
+            <span class="badge">🛒 <span id="cartCount">0</span></span>
+        </a>
+    </div>
+</header>
+
+<nav class="nav" aria-label="Primary navigation">
+    <div class="container row">
+        <div class="menu">
+            <a data-nav href="index.html">Trang chủ</a>
+            <a data-nav href="products.html">Sản phẩm</a>
+            <a data-nav href="blog.html">Blog</a>
+            <a data-nav href="gallery.html">Thư viện</a>
+            <a data-nav href="contact.html">Liên hệ / Đặt hàng</a>
+            <a data-nav href="cart.html">Giỏ hàng</a>
+        </div>
+    </div>
+</nav>
+
+<main id="content" class="container">
+    <div class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Trang chủ</a><span>›</span><span>Thư viện</span>
+    </div>
+
+    <section class="content-card grid">
+        <div class="grid-head">
+            <h2>Thư viện ảnh</h2>
+            <div class="small">Thư viện ảnh</div>
+        </div>
+
+        <div class="cards" aria-label="Gallery grid">
+            <article class="card">
+                <div class="card-media"><img src="Images/toituoi.jpeg" alt="Tỏi tươi"></div>
+                <div class="card-body">
+                    <div class="card-title">Tỏi tươi</div>
+                    <div class="small"></div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card-media"><img src="Images/toiden.jpg" alt="Tỏi đen"></div>
+                <div class="card-body">
+                    <div class="card-title">Tỏi đen</div>
+                    <div class="small"></div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card-media"><img src="Images/bottoi.jpg" alt="Bột tỏi"></div>
+                <div class="card-body">
+                    <div class="card-title">Bột tỏi</div>
+                    <div class="small"></div>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container row">
+        <div>© Garlic Mart</div>
+        <div><a href="products.html">Đi tới sản phẩm</a></div>
+    </div>
+</footer>
+
+<script src="js/app.js"></script>
 </body>
 </html>
