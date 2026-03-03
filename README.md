@@ -58,12 +58,12 @@ Final-web/
 - Price filtering (range input)
 - Search by name or tag
 - Sorting options:
-  - Price ascending
-  - Price descending
-  - Name
+    - Price ascending
+    - Price descending
+    - Name
 - Buttons:
-  - View details
-  - Add to cart
+    - View details
+    - Add to cart
 - Toast notification when product is added
 - Display number of filtered products
 
@@ -93,11 +93,11 @@ product-detail.html?id=classic
 
 - Cart stored using `localStorage`
 - Table includes:
-  - Product
-  - Unit price
-  - Quantity (editable)
-  - Line total
-  - Action column (View / Remove)
+    - Product
+    - Unit price
+    - Quantity (editable)
+    - Line total
+    - Action column (View / Remove)
 - Automatic total price calculation
 - Remove individual item
 - Clear entire cart
@@ -266,10 +266,9 @@ Use Live Server or WebStorm built-in server.
 
 ---
 
-# 👨‍💻 Author 
+# 👨‍💻 Author
 Kha Dao
 
 Educational project — built for learning Frontend Web Development.
 
----# Web-Practices
-# Web-Practices
+---
