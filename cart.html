@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Garlic Mart — Giỏ hàng</title>
+    <link rel="stylesheet" href="./asset/css/styles.css"/>
+</head>
+<body>
+<a class="skip-link" href="#content">Bỏ qua để đến nội dung</a>
+
+<header class="topbar">
+    <div class="container row">
+        <a class="brand" href="index.html">
+            <img src="Images/logo.jpg" alt="Logo Garlic Mart" class="logo">
+            <span>Garlic Mart</span>
+        </a>
+        <div class="actions">
+            <span class="badge" aria-label="Số lượng trong giỏ">🛒 <span id="cartCount">0</span></span>
+        </div>
+    </div>
+</header>
+
+<nav class="nav" aria-label="Điều hướng chính">
+    <div class="container row">
+        <div class="menu">
+            <a data-nav href="index.html">Trang chủ</a>
+            <a data-nav href="products.html">Sản phẩm</a>
+            <a data-nav href="blog.html">Blog</a>
+            <a data-nav href="gallery.html">Thư viện</a>
+            <a data-nav href="contact.html">Liên hệ / Đặt hàng</a>
+            <a data-nav href="cart.html">Giỏ hàng</a>
+        </div>
+        <div class="actions">
+            <button class="btn" type="button"
+                    onclick="Toast.show('Mẹo', 'Bạn có thể thay đổi số lượng ngay trong giỏ hàng!')">Mẹo
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main id="content" class="container">
+    <div class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Trang chủ</a><span>›</span><span>Giỏ hàng</span>
+    </div>
+
+    <section class="panel">
+        <h1 style="margin:0 0 10px;">Giỏ hàng</h1>
+        <p class="hint" style="margin-top:0;">
+            Bạn có thể: chỉnh số lượng, xoá sản phẩm, xoá tất cả.
+        </p>
+
+        <div id="cartEmpty" class="panel" style="display:none; margin-top:12px;">
+            <h2 style="margin:0 0 6px; font-size:16px;">Giỏ hàng đang trống</h2>
+            <p class="hint" style="margin:0 0 10px;">Hãy quay lại trang Sản phẩm và bấm “Thêm”.</p>
+            <a class="btn primary" href="products.html">Đi tới Sản phẩm</a>
+        </div>
+
+        <div id="cartWrap" class="table-wrap" style="margin-top:12px;"></div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:space-between; margin-top:14px;">
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <button class="btn" type="button" id="clearCartBtn">Xoá tất cả</button>
+                <a class="btn" href="products.html">← Tiếp tục mua</a>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                <strong>Tổng:</strong> <span id="cartTotal">0 ₫</span>
+                <a class="btn primary" href="contact.html?intent=order">Đặt hàng (Form)</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container row">
+        <div>© Garlic Mart</div>
+        <div><a href="contact.html">Cần hỗ trợ?</a></div>
+    </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+    <div class="row">
+        <div>
+            <p class="title" id="toastTitle">Title</p>
+            <p class="msg" id="toastMsg">Message</p>
+        </div>
+        <button id="toastClose" type="button" aria-label="Đóng thông báo">Đóng</button>
+    </div>
+</div>
+
+<div id="modalBackdrop" class="modal-backdrop" aria-hidden="true"></div>
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <header>
+        <h3 id="modalTitle">Thông tin</h3>
+        <button class="btn" data-close-modal type="button">Đóng</button>
+    </header>
+    <div class="body">
+        <p>MDemo modal.</p>
+    </div>
+    <div class="actions">
+        <button class="btn primary" data-close-modal type="button">OK</button>
+    </div>
+</div>
+
+<script src="./asset/js/app.js" defer></script>
+</body>
+</html>
