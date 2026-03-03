@@ -1,10 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Garlic Mart — Home</title>
+    <link rel="stylesheet" href="asset/css/styles.css"/>
 </head>
 <body>
-$END$
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="topbar">
+    <div class="container row">
+        <a class="brand" href="index.html">
+            <img src="Images/logo.jpg" alt="Garlic Mart Logo" class="logo">
+            <span>Garlic Mart</span>
+            <span class="badge">🛒 <span id="cartCount">0</span></span>
+        </a>
+
+        <form class="search" action="products.html" method="get" role="search" aria-label="Site search">
+            <input type="search" name="q" placeholder="Tìm sản phẩm" aria-label="Search"/>
+            <button type="submit" aria-label="Search button">Tìm kiếm</button>
+        </form>
+    </div>
+</header>
+
+<nav class="nav" aria-label="Primary navigation">
+    <div class="container row">
+        <div class="menu">
+            <a data-nav href="index.html">Trang chủ</a>
+            <a data-nav href="products.html">Sản phẩm</a>
+            <a data-nav href="blog.html">Tin tức</a>
+            <a data-nav href="gallery.html">Thư viện</a>
+            <a data-nav href="contact.html">Liên hệ</a>
+            <a data-nav href="cart.html">Giỏ hàng</a>
+        </div>
+        <div class="actions">
+            <button class="btn" data-open-modal type="button">Về chúng tôi</button>
+        </div>
+    </div>
+</nav>
+
+<main id="content" class="container">
+    <div class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Trang chủ</a>
+    </div>
+
+    <section class="hero">
+        <article class="hero-card">
+            <div class="hero-media" aria-label="Hero image placeholder">
+                <img
+                        src="/Images/bannertoi.jpeg"
+                        alt="Fresh garlic banner"
+                        style="width:100%; height:100%; object-fit:cover; border-radius:14px;">
+            </div>
+            <div class="hero-body">
+                <h1>Tỏi tươi mỗi ngày, bếp sạch mọi nơi</h1>
+                <p>
+                    Mua càng nhiều, ưu đãi càng lớn, hãy đến với chúng tôi. Nơi bạn có thể tin tưởng và mua sắm những
+                    mặt haàng tỏi chất lượng nhất
+                </p>
+                <div class="cta-row">
+                    <a class="btn primary" href="products.html">Mua sản phẩm</a>
+                    <a class="btn" href="blog.html">Mẹo sử dụng tỏi</a>
+                    <a class="btn" href="contact.html">Liên hệ/ thắc mắc</a>
+                </div>
+            </div>
+        </article>
+
+        <aside class="hero-card" aria-label="Quick tips">
+            <div class="hero-body">
+                <h2 style="margin:0 0 8px;">Learning checklist(con làm để check)</h2>
+                <ul style="margin:0; padding-left:18px; color:var(--muted);">
+                    <li>Menu links từng pages</li>
+                    <li>Breadcrumbs cho từng trang</li>
+                    <li>Tooltips (hover/focus)</li>
+                    <li>Toast messages</li>
+                    <li>Modal dialog + Esc close</li>
+                    <li>Form validation ( con k biết tiêngs việt gọi là gì nma như kiểu kiểm tra xác nhận..)</li>
+                    <li>Bảng (thông tin, thuộc tính)</li>
+                </ul>
+                <div class="hr"></div>
+                <button class="btn" type="button" onclick="Toast.show('Vui lòng nhấn sản phẩm và đặt hàng')">
+                    Cách chọn mua hàng
+                </button>
+            </div>
+        </aside>
+    </section>
+
+    <section class="kv">
+        <div class="panel">
+            <h2>Tại sao bạn cần tỏi?</h2>
+            <p>Tỏi là siêu thực phẩm giàu hợp chất lưu huỳnh (allicin), vitamin và khoáng chất, mang lại lợi ích to lớn
+                như tăng cường miễn dịch, kháng khuẩn, giảm huyết áp và cholesterol, bảo vệ tim mạch, phòng chống ung
+                thư, và hỗ trợ tiêu hóa.</p>
+        </div>
+        <div class="panel">
+            <div class="tooltip" data-tip="About our founder">
+                <h2 style="display:flex; align-items:center; gap:8px; margin:0;">
+                    Founder
+                    <button class="tip" type="button" aria-label="idk">?</button>
+                </h2>
+            </div>
+            <p>Cảm ơn bạn đã quan tâm sản phẩm của chungs tôi, chúc bạn một buổi mua sắm vui vẻ</p>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container row">
+        <div>© <span id="year"></span> Garlic Mart (demo)</div>
+        <div>Cảm ơn bạn!</div>
+    </div>
+</footer>
+
+
+<div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+    <div class="row">
+        <div>
+            <p class="title" id="toastTitle">Title</p>
+            <p class="msg" id="toastMsg">Message</p>
+        </div>
+        <button id="toastClose" type="button" aria-label="Close toast">Đóng</button>
+    </div>
+</div>
+
+
+<div id="modalBackdrop" class="modal-backdrop" aria-hidden="true"></div>
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <header>
+        <h3 id="modalTitle">Về chúng tôi</h3>
+        <button class="btn" data-close-modal type="button" aria-label="Close modal">Đóng</button>
+    </header>
+    <div class="body">
+        <p>
+            Chúng tôi đã có kinh nghiệm cung cấp các loại sản phẩm về tỏi cho nhiều nhà hàng, chuỗi cửa hàng nổi tiếng
+            trên khắp thành phố Hồ Chí Minh. Chúng tôi cam kết 100% các cản phẩm chúng tôi bán ra đều có chứng nhận an
+            toàn thực phẩm và đảm bảo an toán cho sức khoẻ con nguời
+        </p>
+    </div>
+    <div class="actions">
+        <button class="btn primary" data-close-modal type="button">OK</button>
+    </div>
+</div>
+
+<script src="asset/js/app.js"></script>
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

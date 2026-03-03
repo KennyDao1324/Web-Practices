@@ -1,10 +1,198 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Garlic Mart — Liên hệ/ Thắc mắc</title>
+    <link rel="stylesheet" href="asset/css/styles.css"/>
 </head>
 <body>
-$END$
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="topbar">
+    <div class="container row">
+        <a class="brand" href="index.html">
+            <img src="Images/logo.jpg" alt="Garlic Mart Logo" class="logo">
+            <span>Garlic Mart</span>
+            <span class="badge">🛒 <span id="cartCount">0</span></span>
+        </a>
+        <div class="actions">
+            <a class="btn" href="products.html">Sản phẩm của chúng tôi</a>
+        </div>
+    </div>
+</header>
+
+<nav class="nav" aria-label="Primary navigation">
+    <div class="container row">
+        <div class="menu">
+            <a data-nav href="index.html">Trang chủ</a>
+            <a data-nav href="products.html">Sản phẩm</a>
+            <a data-nav href="blog.html">Blog</a>
+            <a data-nav href="gallery.html">Thư viện</a>
+            <a data-nav href="contact.html">Liên hệ / Đặt hàng</a>
+            <a data-nav href="cart.html">Giỏ hàng</a>
+        </div>
+        <div class="actions">
+            <button class="btn" data-open-modal type="button">Trợ giúp</button>
+        </div>
+    </div>
+</nav>
+
+<main id="content" class="container">
+    <div class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Trang chủ</a><span>›</span><span>Liên hệ</span>
+    </div>
+
+    <section class="kv">
+        <div class="panel">
+            <h2>Liên hệ / Phản hồi / Đặt hàng</h2>
+            <p class="hint">
+                Nếu bạn có thắc mắc, phản hồi hoặc yêu cầu riêng. Vui lòng điền các thông tin cần thiết và chúng tôi sẽ
+                liên hệ với bạn trong thời gian sớm nhất thông qua email hoặc sđt. Hoặc bạn có thể liên hệ qua ZALO
+                0902700436 (Chi) để có thể nhận câu trả lời sớm nhất !
+            </p>
+
+            <form id="contactForm" novalidate aria-describedby="formHelp">
+                <p id="formHelp" class="hint">
+                    Xin cảm ơn bạn đã đồng hành và kiên nhẫn cùng chúng tôi!
+                </p>
+
+                <div class="field">
+                    <label for="name">Tên *</label>
+                    <input id="name" name="name" autocomplete="name" required/>
+                    <div class="hint">Ví dụ: Kha Dao</div>
+                    <div id="nameErr" class="error" aria-live="polite"></div>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email *</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required/>
+                    <div class="hint">Ví dụ: tênbạn@gmail.com</div>
+                    <div id="emailErr" class="error" aria-live="polite"></div>
+                </div>
+
+                <div class="field">
+                    <label for="topic">Chủ đề *</label>
+                    <select id="topic" name="topic" required>
+                        <option value="">Vui lòng chọn 1</option>
+                        <option>Phản hồi</option>
+                        <option>Liên hệ</option>
+                        <option>Đặt hàng</option>
+                    </select>
+                    <div id="topicErr" class="error" aria-live="polite"></div>
+                </div>
+
+                <fieldset>
+                    <legend>Phương thức liên lạc bạn mong muốn</legend>
+                    <div class="hint">Vui lòng chọn</div>
+                    <label><input type="radio" name="method" value="email" checked> Email</label><br/>
+                    <label><input type="radio" name="method" value="phone"> Qua điện thoại</label>
+                </fieldset>
+
+                <div class="field">
+                    <label for="message">
+                        Lời nhắn *
+                        <span class="tooltip" data-tip="Vui lòng viết suy nghĩ/mong muốn của bạn vào đây ">
+                <button class="tip" type="button" aria-label="Hint about message length">?</button>
+              </span>
+                    </label>
+                    <textarea id="message" name="message" required></textarea>
+                    <div class="hint">Nếu bạn muốn đặt hàng thông qua email, vui lòng điền đầy đủ các thông tin gồm sản
+                        phẩm, số lượng và địa chỉ.
+                    </div>
+                    <div id="messageErr" class="error" aria-live="polite"></div>
+                </div>
+
+                <div class="field">
+                    <label>
+                        <input id="agree" type="checkbox"/>
+                        Tôi đồng ý với điều khoản *
+                    </label>
+                    <div id="agreeErr" class="error" aria-live="polite"></div>
+                </div>
+
+                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                    <button class="btn primary" type="submit">Gửi</button>
+                    <button class="btn" type="reset" onclick="Toast.show('Reset', 'Form cleared')">Xoá</button>
+                </div>
+
+                <div id="formStatus" class="hint" aria-live="polite"></div>
+            </form>
+        </div>
+
+        <aside class="panel">
+            <h2>Giờ làm việc</h2>
+            <p class="hint">Garlic mart hoạt động từ thứ 2-7</p>
+
+            <div class="table-wrap">
+                <table aria-label="Office hours table">
+                    <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Hours</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Thứ 2-6</td>
+                        <td>08:00–21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Thứ 7</td>
+                        <td>09:00–17:00</td>
+                    </tr>
+                    <tr>
+                        <td>Chủ nhật</td>
+                        <td>Nghỉ</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="hr"></div>
+            <button class="btn" type="button"
+                    onclick="Toast.show('Vui long liên hệ với chúng tôi qua email hoặc số điện thoại')">
+                Thắc mắc về giờ làm việc ?
+            </button>
+        </aside>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container row">
+        <div>© Garlic Mart</div>
+        <div><a href="products.html">Trở lại trang mua sắm</a></div>
+</footer>
+
+
+<div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+    <div class="row">
+        <div>
+            <p class="title" id="toastTitle">Title</p>
+            <p class="msg" id="toastMsg">Message</p>
+        </div>
+        <button id="toastClose" type="button" aria-label="Close toast">Đóng</button>
+    </div>
+</div>
+
+
+<div id="modalBackdrop" class="modal-backdrop" aria-hidden="true"></div>
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <header>
+        <h3 id="modalTitle">Trợ giúp</h3>
+        <button class="btn" data-close-modal type="button">Đóng</button>
+    </header>
+    <div class="body">
+        <p>
+            Vui lòng gửi email hoặc liên hệ qua số điện thoại nếu bạn gặp khó khăn trong việc đặt hàng. Cảm onư sự thông
+            cảm của bạn!
+        </p>
+    </div>
+    <div class="actions">
+        <button class="btn primary" data-close-modal type="button">OK</button>
+    </div>
+</div>
+
+<script src="asset/js/app.js"></script>
 </body>
 </html>
