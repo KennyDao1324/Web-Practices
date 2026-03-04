@@ -1,12 +1,14 @@
-#  Garlic Mart — Final Web Project
+# Garlic Mart — Final Web Project
 
-Garlic Mart is a multi-page e-commerce demo website built using HTML, CSS, and Javascript
+Garlic Mart is a multi-page e-commerce demo website built using HTML, CSS, and JavaScript.
 
-This project was created by Kha Dao to practice core Frontend development skills including dynamic rendering, localStorage, UI components, and client-side form validation. Ideas are from my mom's business, which is about garlic.
+This project was created by Kha Dao to practice core frontend development skills including dynamic rendering,
+localStorage, UI components, and client-side form validation.  
+The idea for the project comes from my mom's business, which sells garlic products.
 
 ---
 
-# Technologies Used
+## Technologies Used
 
 - HTML5 (Semantic structure)
 - CSS3 (Flexbox, Grid, Responsive Design)
@@ -16,249 +18,173 @@ This project was created by Kha Dao to practice core Frontend development skills
 
 ---
 
-# 📁 Project Structure
+## Project Structure
 
 ```mermaid
 graph TD
-    ROOT[Final-web/]
-    ROOT --> index[index.html]
-    ROOT --> products[products.html]
-    ROOT --> detail[product-detail.html]
-    ROOT --> blog[blog.html]
-    ROOT --> gallery[gallery.html]
-    ROOT --> contact[contact.html]
-    ROOT --> cart[cart.html]
-    ROOT --> IMAGES[Images/]
-    ROOT --> ASSET[asset/]
-    ROOT --> README[README.md]
-
-    ASSET --> CSS[css/]
-    ASSET --> JS[js/]
-
-    CSS --> styles[styles.css]
-    JS --> app[app.js]
+    ROOT["Final-web/"]
+    ROOT --> index["index.html"]
+    ROOT --> products["products.html"]
+    ROOT --> detail["product-detail.html"]
+    ROOT --> blog["blog.html"]
+    ROOT --> gallery["gallery.html"]
+    ROOT --> contact["contact.html"]
+    ROOT --> cart["cart.html"]
+    ROOT --> IMAGES["Images/"]
+    ROOT --> ASSET["asset/"]
+    ROOT --> README["README.md"]
+    ASSET --> CSS["css/"]
+    ASSET --> JS["js/"]
+    CSS --> styles["styles.css"]
+    JS --> app["app.js"]
 ```
 
 ---
 
-# Pages Implemented
+## Features
 
-## Landing Page (Home)
+### Business Features
 
-- Hero section
-- Brand logo
-- Navigation menu
-- Responsive layout
+#### Product Browsing
 
----
+- Users can view a list of garlic products
+- Product cards include image, description, and price
+- Search products by name or tag
+- Filter products by price range
+- Sort products by price or name
 
-##  Products Page
+#### Product Details
 
-- Dynamically rendered product list using JavaScript
-- Price filtering (range input)
-- Search by name or tag
-- Sorting options:
-    - Price ascending
-    - Price descending
-    - Name
-- Buttons:
-    - View details
-    - Add to cart
-- Toast notification when product is added
-- Display number of filtered products
-
----
-
-## Product Detail Page
-
-- Reads product ID from URL:
-
-```
-product-detail.html?id=classic
-```
-
-- Dynamically displays product data
-- Quantity input
-- Add to cart
-- Modal popup
-- Tooltip
+- Dedicated product detail page
+- Quantity selection
 - Product specification table
-- Link to order form
+- Tooltip hints
+- Modal popup showing additional information
 
----
+#### Shopping Cart
 
-## Cart Page (cart.html)
-
-### Features:
-
-- Cart stored using `localStorage`
-- Table includes:
-    - Product
-    - Unit price
-    - Quantity (editable)
-    - Line total
-    - Action column (View / Remove)
-- Automatic total price calculation
-- Remove individual item
+- Add products to cart
+- Edit quantity inside the cart
+- Remove individual items
 - Clear entire cart
-- Cart item counter displayed in header
+- Automatic price calculation
+- Cart item counter displayed in navigation
+
+#### Image Gallery
+
+- Display garlic product images
+- Hover zoom effect
+
+#### Contact / Order Form
+
+- Users can send inquiries or place orders
+- Form includes:
+    - Name
+    - Email
+    - Topic
+    - Message
+    - Agreement checkbox
+
+Form validation ensures:
+
+- Name must have at least 2 characters
+- Email must be valid
+- Message must contain at least 10 characters
+- User must accept the terms
 
 ---
 
-## Contact / Order Page
+### Technical Features
 
-Form includes:
+#### Dynamic Rendering
 
-- Full name
-- Email
-- Topic
-- Message
-- Agreement checkbox
+- Product list generated dynamically using JavaScript
+- Product detail page generated based on URL parameters
+- Cart table dynamically updated
 
-### Client-side validation:
+#### LocalStorage Cart System
 
-- Name ≥ 2 characters
-- Valid email format
-- Message ≥ 10 characters
-- Must accept terms
+- Cart data stored in browser localStorage
+- Cart persists across page reloads
+- Quantity updates automatically recalculate totals
 
-Displays:
+#### UI Components
 
+- Toast notifications
+- Modal dialogs
+- Tooltip hints
+
+#### Form Validation
+
+- Email validation using regex
 - Field-level error messages
-- Toast notification on successful submission
-- Prefilled message when coming from product detail page
+- Prevent submission when input is invalid
 
----
+#### URL Parameter Handling
 
-##  Gallery Page
-
-- Displays product images
-- Uses `<img>` elements
-- CSS hover zoom effect
-
----
-
-## Blog Page
-
-- Article layout
-- Card-based structure
-- Responsive design
-
----
-
-## JavaScript Features Implemented
-
-##  DOM Utility Functions
-
-```js
-function $(selector)
-function $all(selector)
 ```
-
----
-
-## Dynamic Rendering
-
-- Render product list
-- Render product details
-- Render cart table dynamically
-
----
-
-## LocalStorage (Cart Management)
-
-```js
-localStorage.setItem()
-localStorage.getItem()
-```
-
-- Save cart items
-- Update quantity
-- Calculate total price
-- Display cart badge counter
-
----
-
-## Toast Notifications
-
-- Show temporary messages
-- Auto hide after delay
-- Close button support
-
----
-
-## Modal Dialog
-
-- Open / Close functionality
-- Click outside to close
-- Close with ESC key
-- Focus trap for accessibility
-
----
-
-## Form Validation
-
-- Email regex validation
-- Field-specific error messages
-- Prevent submission if invalid
-
----
-
-## URL Parameters
-
-```js
 new URLSearchParams(location.search)
 ```
 
-- Extract product ID
-- Dynamically display correct product
+Used to retrieve product IDs and dynamically display product data.
 
 ---
 
-#  Accessibility (Basic)
+## Accessibility
+
+Basic accessibility improvements were implemented:
 
 - Skip to content link
-- aria-current for active navigation
+- aria-current navigation indicator
 - aria-label usage
-- aria-live for toast messages
-- Focus trap in modal
+- aria-live toast notifications
+- Focus trap inside modal dialogs
 
 ---
 
-# Responsive Design
+## Responsive Design
 
-- Flexbox for header and layout
+The website adapts to different screen sizes using:
+
+- Flexbox for layout and navigation
 - CSS Grid for product cards
-- Responsive behavior for different screen sizes
+- Responsive spacing and layout adjustments
 
 ---
 
-# Learning Objectives Achieved
+## Learning Objectives Achieved
 
-- Multi-page website structure
-- Separation of HTML, CSS, and JavaScript
-- Managing state using localStorage
+Through this project, the following frontend skills were practiced:
+
+- Creating a multi-page website
+- Separating HTML, CSS, and JavaScript
+- Managing application state using localStorage
 - Rendering UI dynamically with JavaScript
-- Implementing form validation
-- Creating reusable UI components (Toast, Modal)
-- Understanding frontend project structure
+- Implementing client-side form validation
+- Building reusable UI components (Toast, Modal)
+- Structuring a small frontend project
 
 ---
 
-# How to Run the Project
+## How to Run the Project
 
-### Option 1:
-Open `index.html` directly in your browser.
+### Option 1
 
-### Option 2 (Recommended):
-Use Live Server or WebStorm built-in server.
+Open `index.html` directly in a web browser.
+
+### Option 2 (Recommended)
+
+Use a local development server such as:
+
+- Live Server (VS Code extension)
+- WebStorm built-in server
 
 ---
 
-#  Possible Future Improvements
+## Possible Future Improvements
 
 - Checkout page
-- Discount codes
+- Discount code system
 - Shipping cost calculation
 - Dark mode toggle
 - Product pagination
@@ -266,9 +192,8 @@ Use Live Server or WebStorm built-in server.
 
 ---
 
-# 👨‍💻 Author
+## Author
+
 Kha Dao
 
-Educational project — built for learning Frontend Web Development.
-
----
+Educational project created to practice frontend web development.
