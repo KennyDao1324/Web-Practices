@@ -18,25 +18,25 @@ This project was created by Kha Dao to practice core Frontend development skills
 
 # 📁 Project Structure
 
-```
-Final-web/
-│
-├── index.html
-├── products.html
-├── product-detail.html
-├── blog.html
-├── gallery.html
-├── contact.html
-├── cart.html
-│-Images
-├── asset/
-│   ├── css/
-│   │   └── styles.css
-│   ├── js/
-│   │   └── app.js
-|
-│
-└── README.md
+```mermaid
+graph TD
+    ROOT[Final-web/]
+    ROOT --> index[index.html]
+    ROOT --> products[products.html]
+    ROOT --> detail[product-detail.html]
+    ROOT --> blog[blog.html]
+    ROOT --> gallery[gallery.html]
+    ROOT --> contact[contact.html]
+    ROOT --> cart[cart.html]
+    ROOT --> IMAGES[Images/]
+    ROOT --> ASSET[asset/]
+    ROOT --> README[README.md]
+
+    ASSET --> CSS[css/]
+    ASSET --> JS[js/]
+
+    CSS --> styles[styles.css]
+    JS --> app[app.js]
 ```
 
 ---
